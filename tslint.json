@@ -1,0 +1,17 @@
+{
+  "rulesDirectory": ["tslint-plugin-prettier"],
+  "extends": ["tslint-config-prettier"],
+  "rules": {
+    "prettier": [
+      true,
+      {
+        "bracketSpacing": true,
+        "printWidth": 160,
+        "semi": true,
+        "singleQuote": false,
+        "tabWidth": 2,
+        "trailingComma": "none"
+      }
+    ]
+  }
+}

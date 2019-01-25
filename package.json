@@ -1,0 +1,48 @@
+{
+  "name": "gas-sitegen",
+  "version": "0.0.1",
+  "description": "An example generating static sites from Google Sheets and deploying them to Firebase Hosting in Google Apps Script",
+  "main": "index.js",
+  "scripts": {
+    "lint": "tslint --fix src/**/*.ts",
+    "test": "jest",
+    "build": "npm run lint && rimraf dist && webpack && cpx src/appsscript.json dist",
+    "deploy": "npm run build && clasp push"
+  },
+  "author": "boiyaa",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/google-apps-script": "0.0.32",
+    "@types/jest": "^23.3.10",
+    "cpx": "^1.5.0",
+    "gas-webpack-plugin": "^0.3.0",
+    "jest": "^23.6.0",
+    "prettier": "^1.15.3",
+    "rimraf": "^2.6.2",
+    "ts-jest": "^23.10.5",
+    "ts-loader": "^5.3.1",
+    "tslint": "^5.11.0",
+    "tslint-config-prettier": "^1.17.0",
+    "tslint-plugin-prettier": "^2.0.1",
+    "typescript": "^3.2.2",
+    "webpack": "^4.27.1",
+    "webpack-cli": "^3.1.2"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testRegex": "(src/.+(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ]
+  },
+  "dependencies": {
+    "googleapis": "^36.0.0"
+  }
+}
